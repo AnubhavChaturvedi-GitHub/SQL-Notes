@@ -73,4 +73,33 @@ output
 +------------------------------------------------------+
 38 rows in set (0.01 sec)
 ```
+4. Create Table in my sql
+```shell
+CREATE TABLE STUDENTS(SN INT(2),NAME VARCHAR(10),DOB VARCHAR(10));
+```
+output
+```
+Query OK, 0 rows affected, 1 warning (0.02 sec)
 
+```
+5. Insert the value in Table
+```shell
+INSERT INTO STUDENTS VALUES(01,'ANUBHAV','08/10/2003');
+```
+output
+```
+Query OK, 1 row affected (0.01 sec)
+```
+6. Display the table
+```shell
+SELECT *FROM STUDENTS;
+```
+output
+```
++------+---------+------------+
+| SN   | NAME    | DOB        |
++------+---------+------------+
+|    1 | ANUBHAV | 08/10/2003 |
++------+---------+------------+
+1 row in set (0.00 sec)
+```
