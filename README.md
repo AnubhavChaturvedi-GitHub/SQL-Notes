@@ -1,6 +1,7 @@
 # SQL-Notes
 visit website to download the setup of sql :- [Download](https://dev.mysql.com/downloads/installer/)
-1 . To display the databases abliable in PC
+
+1. To display the databases abliable in PC
 ```shell
 show database;
 ```
