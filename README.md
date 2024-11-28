@@ -104,3 +104,67 @@ output
 +------+---------+------------+
 1 row in set (0.00 sec)
 ```
+
+TABLE CREATED
+
+```
++------+---------+------------+
+| SN   | NAME    | DOB        |
++------+---------+------------+
+|    1 | ANUBHAV | 08/10/2003 |
+|    2 | shejal  | 30/03/2004 |
+|    3 | Abhay   | 15/03/2002 |
+|    3 | Abhay   | 15/03/2002 |
++------+---------+------------+
+4 rows in set (0.00 sec)
+```
+
+7. Delete Row from table using SN 
+
+```shell
+ DELETE FROM STUDENTS WHERE SN=03;
+```
+output 
+```
+Query OK, 2 rows affected (0.01 sec)
+
+mysql> SELECT *FROM STUDENTS;
++------+---------+------------+
+| SN   | NAME    | DOB        |
++------+---------+------------+
+|    1 | ANUBHAV | 08/10/2003 |
+|    2 | shejal  | 30/03/2004 |
++------+---------+------------+
+2 rows in set (0.00 sec)
+```
+8. Delete Table From Database
+```shell
+ DELETE FROM STUDENTS;
+```
+output
+```
+mysql> delete from students;
+Query OK, 2 rows affected (0.00 sec)
+
+mysql> SELECT *FROM STUDENTS;
+Empty set (0.00 sec)
+
+mysql>
+```
+9. Drop the table
+```shell
+DROP TABLE STUDENTS;
+```
+output
+```
+Query OK, 0 rows affected (0.02 sec)
+```
+checck
+```
+mysql> DROP TABLE STUDENTS;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> SELECT *FROM STUDENTS;
+ERROR 1146 (42S02): Table 'mysql.students' doesn't exist
+mysql>
+```
