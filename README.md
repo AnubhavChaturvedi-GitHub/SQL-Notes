@@ -159,7 +159,7 @@ output
 ```
 Query OK, 0 rows affected (0.02 sec)
 ```
-checck
+check
 ```
 mysql> DROP TABLE STUDENTS;
 Query OK, 0 rows affected (0.02 sec)
@@ -168,3 +168,6 @@ mysql> SELECT *FROM STUDENTS;
 ERROR 1146 (42S02): Table 'mysql.students' doesn't exist
 mysql>
 ```
+
+10. Datatypes in SQL
+![image](https://github.com/user-attachments/assets/a86a07ac-a8c2-431a-9c7b-80d6ebb08653)
