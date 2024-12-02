@@ -172,3 +172,99 @@ mysql>
 10. Datatypes in SQL
 
 ![image](https://github.com/user-attachments/assets/a86a07ac-a8c2-431a-9c7b-80d6ebb08653)
+
+11. Use Where keyword to display the data with condition
+
+```
+
+mysql> select *from school;
++------+---------+-------+------------+
+| id   | name    | class | date       |
++------+---------+-------+------------+
+|    1 | Anubhav | CESE  | 01/10/2021 |
+|    2 | Abhay   | CSE   | 01/10/2021 |
+|    3 | Shejal  | CSE   | 01/10/2021 |
+|    4 | parv    | CESE  | 01/10/2021 |
++------+---------+-------+------------+
+4 rows in set (0.00 sec)
+
+mysql> select *from collage;
++------+---------+---------+------------+
+| id   | name    | section | date       |
++------+---------+---------+------------+
+|    1 | Anubhav | CESE    | 01/10/2021 |
+|    2 | Abhay   | CSE     | 01/10/2021 |
+|    3 | Shejal  | CSE     | 01/10/2021 |
+|    4 | parv    | CESE    | 01/10/2021 |
++------+---------+---------+------------+
+4 rows in set (0.00 sec)
+
+mysql> select *from collage where section="CSE";
++------+--------+---------+------------+
+| id   | name   | section | date       |
++------+--------+---------+------------+
+|    2 | Abhay  | CSE     | 01/10/2021 |
+|    3 | Shejal | CSE     | 01/10/2021 |
++------+--------+---------+------------+
+2 rows in set (0.00 sec)
+```
+
+12. using different conditition
+
+![image](https://github.com/user-attachments/assets/23df7c1b-2fc9-4a3e-ae99-709ffa0633c7)
+
+13. creating table with primary key
+
+```
+mysql> create table mydata(id int primary key , time varchar(10) , work varchar(10));
+Query OK, 0 rows affected (0.02 sec)
+```
+```
+mysql> insert into mydata values(1,'01:00 AM','play music');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into mydata values(2,'02:00 AM','run');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into mydata values(3,'03:00 AM','stand');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into mydata values(4,'04:00 AM','cool');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select *from mydata where id<=2;
++----+----------+------------+
+| id | time     | work       |
++----+----------+------------+
+|  1 | 01:00 AM | play music |
+|  2 | 02:00 AM | run        |
++----+----------+------------+
+2 rows in set (0.00 sec)
+
+mysql> select *from mydata where id=2;
++----+----------+------+
+| id | time     | work |
++----+----------+------+
+|  2 | 02:00 AM | run  |
++----+----------+------+
+1 row in set (0.00 sec)
+
+mysql> select *from mydata where id>2;
++----+----------+-------+
+| id | time     | work  |
++----+----------+-------+
+|  3 | 03:00 AM | stand |
+|  4 | 04:00 AM | cool  |
++----+----------+-------+
+2 rows in set (0.00 sec)
+
+mysql> select *from mydata where id>=2;
++----+----------+-------+
+| id | time     | work  |
++----+----------+-------+
+|  2 | 02:00 AM | run   |
+|  3 | 03:00 AM | stand |
+|  4 | 04:00 AM | cool  |
++----+----------+-------+
+3 rows in set (0.00 sec)
+``` 
