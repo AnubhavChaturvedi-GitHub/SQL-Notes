@@ -1,14 +1,14 @@
-# SQL Notes  
-> 🚀 **Quickly Set Up SQL on Your Machine**  
-👉 [**Download MySQL Installer**](https://dev.mysql.com/downloads/installer/)
+# **SQL Notes**  
+**Get started with SQL by downloading the setup here:**  
+[Download MySQL](https://dev.mysql.com/downloads/installer/)  
 
 ---
 
-### 1️⃣ Show All Databases
+## **1. Display Available Databases**
 ```sql
 SHOW DATABASES;
 ```
-**Output:**  
+### Output:  
 | Database           |  
 |--------------------|  
 | information_schema |  
@@ -18,142 +18,131 @@ SHOW DATABASES;
 
 ---
 
-### 2️⃣ Select a Database
+## **2. Select a Database**
 ```sql
 USE mysql;
 ```
 
 ---
 
-### 3️⃣ Show Tables in the Selected Database
+## **3. Show Tables in the Selected Database**
 ```sql
 SHOW TABLES;
 ```
-**Output:**  
-| Tables_in_mysql |  
-|-----------------|  
-| columns_priv    |  
-| user            |  
-| ... (and more)  |  
+### Output:  
+| Tables in mysql                       |  
+|--------------------------------------|  
+| columns_priv                         |  
+| component                            |  
+| db                                   |  
+| ... *(and more)*                     |  
 
 ---
 
-### 4️⃣ Create a Table
+## **4. Create a Table**
 ```sql
 CREATE TABLE STUDENTS (
-    SN INT(2), 
-    NAME VARCHAR(10), 
-    DOB VARCHAR(10)
+  SN INT(2), 
+  NAME VARCHAR(10), 
+  DOB VARCHAR(10)
 );
 ```
-**Output:**  
+### Output:  
 ```
-Query OK, 0 rows affected (0.02 sec)
+Query OK, 0 rows affected, 1 warning (0.02 sec)
 ```
 
 ---
 
-### 5️⃣ Insert Data into the Table
+## **5. Insert Data into the Table**
 ```sql
 INSERT INTO STUDENTS VALUES (1, 'ANUBHAV', '08/10/2003');
 ```
-**Output:**  
+### Output:  
 ```
 Query OK, 1 row affected (0.01 sec)
 ```
 
 ---
 
-### 6️⃣ View All Data in the Table
+## **6. Display Data from the Table**
 ```sql
 SELECT * FROM STUDENTS;
 ```
-**Output:**  
-| SN | NAME    | DOB        |  
-|----|---------|------------|  
-| 1  | ANUBHAV | 08/10/2003 |  
+### Output:  
+| SN  | NAME    | DOB        |  
+|-----|---------|------------|  
+| 1   | ANUBHAV | 08/10/2003 |  
 
 ---
 
-### 7️⃣ Delete Rows Based on a Condition
+## **7. Delete a Row**
 ```sql
 DELETE FROM STUDENTS WHERE SN = 3;
 ```
-**Output:**  
+### Output:  
 ```
 Query OK, 2 rows affected (0.01 sec)
 ```
 
 ---
 
-### 8️⃣ Delete All Rows in a Table
+## **8. Delete All Data in a Table**
 ```sql
 DELETE FROM STUDENTS;
+```
+### Output:  
+```
+Query OK, 2 rows affected (0.00 sec)
+Empty set (0.00 sec)
 ```
 
 ---
 
-### 9️⃣ Drop a Table
+## **9. Drop a Table**
 ```sql
 DROP TABLE STUDENTS;
 ```
-**Output:**  
+### Output:  
 ```
 Query OK, 0 rows affected (0.02 sec)
 ```
 
 ---
 
-### 🔟 SQL Data Types  
-| **Data Type** | **Description**       |  
-|---------------|-----------------------|  
-| INT           | Integer Numbers       |  
-| VARCHAR(n)    | Variable-Length Text  |  
-| DATE          | Dates (YYYY-MM-DD)    |  
-| ...           | ...                   |  
+## **10. SQL Data Types**  
+![SQL Data Types](https://github.com/user-attachments/assets/a86a07ac-a8c2-431a-9c7b-80d6ebb08653)
 
 ---
 
-### 1️⃣1️⃣ Use Conditions with `WHERE`  
-#### Example: Retrieve Specific Data  
+## **11. Use `WHERE` Keyword for Conditional Queries**
+Example:  
 ```sql
-SELECT * FROM COLLAGE WHERE SECTION = 'CSE';
+SELECT * FROM collage WHERE section = "CSE";
 ```
-**Output:**  
-| ID | NAME   | SECTION | DATE       |  
-|----|--------|---------|------------|  
-| 2  | Abhay  | CSE     | 01/10/2021 |  
-| 3  | Shejal | CSE     | 01/10/2021 |  
+### Output:  
+| id  | name   | section | date       |  
+|-----|--------|---------|------------|  
+| 2   | Abhay  | CSE     | 01/10/2021 |  
+| 3   | Shejal | CSE     | 01/10/2021 |  
 
 ---
 
-### 1️⃣2️⃣ Conditions for Data Retrieval  
-| **Condition**      | **Syntax**                 | **Example**                  |  
-|---------------------|----------------------------|------------------------------|  
-| Equals             | `=`                       | `id = 2`                     |  
-| Not Equals         | `!=` or `<>`              | `id != 2`                    |  
-| Greater/Less       | `>` or `<`                | `id > 2`                     |  
-| Between            | `BETWEEN x AND y`         | `id BETWEEN 2 AND 4`         |  
-| In Set             | `IN (x, y)`               | `id IN (1, 3)`               |  
+## **12. Conditional Operators**  
+![Conditional Operators](https://github.com/user-attachments/assets/23df7c1b-2fc9-4a3e-ae99-709ffa0633c7)
 
 ---
 
-### 1️⃣3️⃣ Create a Table with a Primary Key
+## **13. Create a Table with a Primary Key**
 ```sql
-CREATE TABLE MYDATA (
-    ID INT PRIMARY KEY, 
-    TIME VARCHAR(10), 
-    WORK VARCHAR(10)
+CREATE TABLE mydata (
+  id INT PRIMARY KEY, 
+  time VARCHAR(10), 
+  work VARCHAR(10)
 );
 ```
 
 ---
 
-### 1️⃣4️⃣ Types of Keys in SQL  
-| **Key Type**       | **Description**                                                                 |  
-|---------------------|---------------------------------------------------------------------------------|  
-| Primary Key        | Ensures uniqueness of rows                                                     |  
-| Foreign Key        | Links tables                                                                   |  
-| Composite Key      | Combines columns to form a unique key                                          |  
-
----
+## **14. Keys in SQL**  
+![SQL Keys](https://github.com/user-attachments/assets/2d189ebd-d597-4fad-8519-a8a9883b619e)
