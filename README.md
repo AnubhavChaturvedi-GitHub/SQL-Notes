@@ -170,4 +170,5 @@ mysql>
 ```
 
 10. Datatypes in SQL
+
 ![image](https://github.com/user-attachments/assets/a86a07ac-a8c2-431a-9c7b-80d6ebb08653)
