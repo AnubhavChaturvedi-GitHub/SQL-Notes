@@ -267,4 +267,61 @@ mysql> select *from mydata where id>=2;
 |  4 | 04:00 AM | cool  |
 +----+----------+-------+
 3 rows in set (0.00 sec)
+
+mysql> select *from mydata where id != 2;
++----+----------+------------+
+| id | time     | work       |
++----+----------+------------+
+|  1 | 01:00 AM | play music |
+|  3 | 03:00 AM | stand      |
+|  4 | 04:00 AM | cool       |
++----+----------+------------+
+3 rows in set (0.00 sec)
+
+mysql> select *from mydata where id <> 2;
++----+----------+------------+
+| id | time     | work       |
++----+----------+------------+
+|  1 | 01:00 AM | play music |
+|  3 | 03:00 AM | stand      |
+|  4 | 04:00 AM | cool       |
++----+----------+------------+
+3 rows in set (0.00 sec)
+
+mysql> select *from mydata where id between 2 and 3;
++----+----------+-------+
+| id | time     | work  |
++----+----------+-------+
+|  2 | 02:00 AM | run   |
+|  3 | 03:00 AM | stand |
++----+----------+-------+
+2 rows in set (0.00 sec)
+
+mysql> select *from mydata where id like 3;
++----+----------+-------+
+| id | time     | work  |
++----+----------+-------+
+|  3 | 03:00 AM | stand |
++----+----------+-------+
+1 row in set (0.00 sec)
+
+mysql> select *from mydata where id like 30;
+Empty set (0.00 sec)
+
+mysql> select *from mydata where id like 3;
++----+----------+-------+
+| id | time     | work  |
++----+----------+-------+
+|  3 | 03:00 AM | stand |
++----+----------+-------+
+1 row in set (0.00 sec)
+mysql> select *from mydata where id in (1,3);
++----+----------+------------+
+| id | time     | work       |
++----+----------+------------+
+|  1 | 01:00 AM | play music |
+|  3 | 03:00 AM | stand      |
++----+----------+------------+
+2 rows in set (0.00 sec)
+
 ``` 
