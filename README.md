@@ -324,4 +324,8 @@ mysql> select *from mydata where id in (1,3);
 +----+----------+------------+
 2 rows in set (0.00 sec)
 
-``` 
+```
+14. keys in SQl
+    
+![image](https://github.com/user-attachments/assets/2d189ebd-d597-4fad-8519-a8a9883b619e)
+
