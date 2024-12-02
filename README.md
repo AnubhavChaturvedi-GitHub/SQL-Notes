@@ -1,331 +1,159 @@
-# SQL-Notes
-visit website to download the setup of sql :- [Download](https://dev.mysql.com/downloads/installer/)
+# SQL Notes  
+> 🚀 **Quickly Set Up SQL on Your Machine**  
+👉 [**Download MySQL Installer**](https://dev.mysql.com/downloads/installer/)
 
-1. To display the databases abliable in PC
-```shell
-show database;
-```
-Output :
-```
-mysql> show databases;
-+--------------------+
-| Database           |
-+--------------------+
-| information_schema |
-| mysql              |
-| performance_schema |
-| sys                |
-+--------------------+
-4 rows in set (0.01 sec)
+---
 
-mysql>
+### 1️⃣ Show All Databases
+```sql
+SHOW DATABASES;
 ```
-2. To select the databases from the list EG: Mysql
-```shell
-use mysql;
-```
-3. show all the table from the databases
-```shell
-show tables;
-```
-output 
-```
-+------------------------------------------------------+
-| Tables_in_mysql                                      |
-+------------------------------------------------------+
-| columns_priv                                         |
-| component                                            |
-| db                                                   |
-| default_roles                                        |
-| engine_cost                                          |
-| func                                                 |
-| general_log                                          |
-| global_grants                                        |
-| gtid_executed                                        |
-| help_category                                        |
-| help_keyword                                         |
-| help_relation                                        |
-| help_topic                                           |
-| innodb_index_stats                                   |
-| innodb_table_stats                                   |
-| ndb_binlog_index                                     |
-| password_history                                     |
-| plugin                                               |
-| procs_priv                                           |
-| proxies_priv                                         |
-| replication_asynchronous_connection_failover         |
-| replication_asynchronous_connection_failover_managed |
-| replication_group_configuration_version              |
-| replication_group_member_actions                     |
-| role_edges                                           |
-| server_cost                                          |
-| servers                                              |
-| slave_master_info                                    |
-| slave_relay_log_info                                 |
-| slave_worker_info                                    |
-| slow_log                                             |
-| tables_priv                                          |
-| time_zone                                            |
-| time_zone_leap_second                                |
-| time_zone_name                                       |
-| time_zone_transition                                 |
-| time_zone_transition_type                            |
-| user                                                 |
-+------------------------------------------------------+
-38 rows in set (0.01 sec)
-```
-4. Create Table in my sql
-```shell
-CREATE TABLE STUDENTS(SN INT(2),NAME VARCHAR(10),DOB VARCHAR(10));
-```
-output
-```
-Query OK, 0 rows affected, 1 warning (0.02 sec)
+**Output:**  
+| Database           |  
+|--------------------|  
+| information_schema |  
+| mysql              |  
+| performance_schema |  
+| sys                |  
 
+---
+
+### 2️⃣ Select a Database
+```sql
+USE mysql;
 ```
-5. Insert the value in Table
-```shell
-INSERT INTO STUDENTS VALUES(01,'ANUBHAV','08/10/2003');
+
+---
+
+### 3️⃣ Show Tables in the Selected Database
+```sql
+SHOW TABLES;
 ```
-output
+**Output:**  
+| Tables_in_mysql |  
+|-----------------|  
+| columns_priv    |  
+| user            |  
+| ... (and more)  |  
+
+---
+
+### 4️⃣ Create a Table
+```sql
+CREATE TABLE STUDENTS (
+    SN INT(2), 
+    NAME VARCHAR(10), 
+    DOB VARCHAR(10)
+);
+```
+**Output:**  
+```
+Query OK, 0 rows affected (0.02 sec)
+```
+
+---
+
+### 5️⃣ Insert Data into the Table
+```sql
+INSERT INTO STUDENTS VALUES (1, 'ANUBHAV', '08/10/2003');
+```
+**Output:**  
 ```
 Query OK, 1 row affected (0.01 sec)
 ```
-6. Display the table
-```shell
-SELECT *FROM STUDENTS;
-```
-output
-```
-+------+---------+------------+
-| SN   | NAME    | DOB        |
-+------+---------+------------+
-|    1 | ANUBHAV | 08/10/2003 |
-+------+---------+------------+
-1 row in set (0.00 sec)
-```
 
-TABLE CREATED
+---
 
+### 6️⃣ View All Data in the Table
+```sql
+SELECT * FROM STUDENTS;
 ```
-+------+---------+------------+
-| SN   | NAME    | DOB        |
-+------+---------+------------+
-|    1 | ANUBHAV | 08/10/2003 |
-|    2 | shejal  | 30/03/2004 |
-|    3 | Abhay   | 15/03/2002 |
-|    3 | Abhay   | 15/03/2002 |
-+------+---------+------------+
-4 rows in set (0.00 sec)
-```
+**Output:**  
+| SN | NAME    | DOB        |  
+|----|---------|------------|  
+| 1  | ANUBHAV | 08/10/2003 |  
 
-7. Delete Row from table using SN 
+---
 
-```shell
- DELETE FROM STUDENTS WHERE SN=03;
+### 7️⃣ Delete Rows Based on a Condition
+```sql
+DELETE FROM STUDENTS WHERE SN = 3;
 ```
-output 
+**Output:**  
 ```
 Query OK, 2 rows affected (0.01 sec)
+```
 
-mysql> SELECT *FROM STUDENTS;
-+------+---------+------------+
-| SN   | NAME    | DOB        |
-+------+---------+------------+
-|    1 | ANUBHAV | 08/10/2003 |
-|    2 | shejal  | 30/03/2004 |
-+------+---------+------------+
-2 rows in set (0.00 sec)
-```
-8. Delete Table From Database
-```shell
- DELETE FROM STUDENTS;
-```
-output
-```
-mysql> delete from students;
-Query OK, 2 rows affected (0.00 sec)
+---
 
-mysql> SELECT *FROM STUDENTS;
-Empty set (0.00 sec)
-
-mysql>
+### 8️⃣ Delete All Rows in a Table
+```sql
+DELETE FROM STUDENTS;
 ```
-9. Drop the table
-```shell
+
+---
+
+### 9️⃣ Drop a Table
+```sql
 DROP TABLE STUDENTS;
 ```
-output
+**Output:**  
 ```
 Query OK, 0 rows affected (0.02 sec)
 ```
-check
+
+---
+
+### 🔟 SQL Data Types  
+| **Data Type** | **Description**       |  
+|---------------|-----------------------|  
+| INT           | Integer Numbers       |  
+| VARCHAR(n)    | Variable-Length Text  |  
+| DATE          | Dates (YYYY-MM-DD)    |  
+| ...           | ...                   |  
+
+---
+
+### 1️⃣1️⃣ Use Conditions with `WHERE`  
+#### Example: Retrieve Specific Data  
+```sql
+SELECT * FROM COLLAGE WHERE SECTION = 'CSE';
 ```
-mysql> DROP TABLE STUDENTS;
-Query OK, 0 rows affected (0.02 sec)
+**Output:**  
+| ID | NAME   | SECTION | DATE       |  
+|----|--------|---------|------------|  
+| 2  | Abhay  | CSE     | 01/10/2021 |  
+| 3  | Shejal | CSE     | 01/10/2021 |  
 
-mysql> SELECT *FROM STUDENTS;
-ERROR 1146 (42S02): Table 'mysql.students' doesn't exist
-mysql>
-```
+---
 
-10. Datatypes in SQL
+### 1️⃣2️⃣ Conditions for Data Retrieval  
+| **Condition**      | **Syntax**                 | **Example**                  |  
+|---------------------|----------------------------|------------------------------|  
+| Equals             | `=`                       | `id = 2`                     |  
+| Not Equals         | `!=` or `<>`              | `id != 2`                    |  
+| Greater/Less       | `>` or `<`                | `id > 2`                     |  
+| Between            | `BETWEEN x AND y`         | `id BETWEEN 2 AND 4`         |  
+| In Set             | `IN (x, y)`               | `id IN (1, 3)`               |  
 
-![image](https://github.com/user-attachments/assets/a86a07ac-a8c2-431a-9c7b-80d6ebb08653)
+---
 
-11. Use Where keyword to display the data with condition
-
-```
-
-mysql> select *from school;
-+------+---------+-------+------------+
-| id   | name    | class | date       |
-+------+---------+-------+------------+
-|    1 | Anubhav | CESE  | 01/10/2021 |
-|    2 | Abhay   | CSE   | 01/10/2021 |
-|    3 | Shejal  | CSE   | 01/10/2021 |
-|    4 | parv    | CESE  | 01/10/2021 |
-+------+---------+-------+------------+
-4 rows in set (0.00 sec)
-
-mysql> select *from collage;
-+------+---------+---------+------------+
-| id   | name    | section | date       |
-+------+---------+---------+------------+
-|    1 | Anubhav | CESE    | 01/10/2021 |
-|    2 | Abhay   | CSE     | 01/10/2021 |
-|    3 | Shejal  | CSE     | 01/10/2021 |
-|    4 | parv    | CESE    | 01/10/2021 |
-+------+---------+---------+------------+
-4 rows in set (0.00 sec)
-
-mysql> select *from collage where section="CSE";
-+------+--------+---------+------------+
-| id   | name   | section | date       |
-+------+--------+---------+------------+
-|    2 | Abhay  | CSE     | 01/10/2021 |
-|    3 | Shejal | CSE     | 01/10/2021 |
-+------+--------+---------+------------+
-2 rows in set (0.00 sec)
+### 1️⃣3️⃣ Create a Table with a Primary Key
+```sql
+CREATE TABLE MYDATA (
+    ID INT PRIMARY KEY, 
+    TIME VARCHAR(10), 
+    WORK VARCHAR(10)
+);
 ```
 
-12. using different conditition
+---
 
-![image](https://github.com/user-attachments/assets/23df7c1b-2fc9-4a3e-ae99-709ffa0633c7)
+### 1️⃣4️⃣ Types of Keys in SQL  
+| **Key Type**       | **Description**                                                                 |  
+|---------------------|---------------------------------------------------------------------------------|  
+| Primary Key        | Ensures uniqueness of rows                                                     |  
+| Foreign Key        | Links tables                                                                   |  
+| Composite Key      | Combines columns to form a unique key                                          |  
 
-13. creating table with primary key
-
-```
-mysql> create table mydata(id int primary key , time varchar(10) , work varchar(10));
-Query OK, 0 rows affected (0.02 sec)
-```
-```
-mysql> insert into mydata values(1,'01:00 AM','play music');
-Query OK, 1 row affected (0.01 sec)
-
-mysql> insert into mydata values(2,'02:00 AM','run');
-Query OK, 1 row affected (0.01 sec)
-
-mysql> insert into mydata values(3,'03:00 AM','stand');
-Query OK, 1 row affected (0.00 sec)
-
-mysql> insert into mydata values(4,'04:00 AM','cool');
-Query OK, 1 row affected (0.01 sec)
-
-mysql> select *from mydata where id<=2;
-+----+----------+------------+
-| id | time     | work       |
-+----+----------+------------+
-|  1 | 01:00 AM | play music |
-|  2 | 02:00 AM | run        |
-+----+----------+------------+
-2 rows in set (0.00 sec)
-
-mysql> select *from mydata where id=2;
-+----+----------+------+
-| id | time     | work |
-+----+----------+------+
-|  2 | 02:00 AM | run  |
-+----+----------+------+
-1 row in set (0.00 sec)
-
-mysql> select *from mydata where id>2;
-+----+----------+-------+
-| id | time     | work  |
-+----+----------+-------+
-|  3 | 03:00 AM | stand |
-|  4 | 04:00 AM | cool  |
-+----+----------+-------+
-2 rows in set (0.00 sec)
-
-mysql> select *from mydata where id>=2;
-+----+----------+-------+
-| id | time     | work  |
-+----+----------+-------+
-|  2 | 02:00 AM | run   |
-|  3 | 03:00 AM | stand |
-|  4 | 04:00 AM | cool  |
-+----+----------+-------+
-3 rows in set (0.00 sec)
-
-mysql> select *from mydata where id != 2;
-+----+----------+------------+
-| id | time     | work       |
-+----+----------+------------+
-|  1 | 01:00 AM | play music |
-|  3 | 03:00 AM | stand      |
-|  4 | 04:00 AM | cool       |
-+----+----------+------------+
-3 rows in set (0.00 sec)
-
-mysql> select *from mydata where id <> 2;
-+----+----------+------------+
-| id | time     | work       |
-+----+----------+------------+
-|  1 | 01:00 AM | play music |
-|  3 | 03:00 AM | stand      |
-|  4 | 04:00 AM | cool       |
-+----+----------+------------+
-3 rows in set (0.00 sec)
-
-mysql> select *from mydata where id between 2 and 3;
-+----+----------+-------+
-| id | time     | work  |
-+----+----------+-------+
-|  2 | 02:00 AM | run   |
-|  3 | 03:00 AM | stand |
-+----+----------+-------+
-2 rows in set (0.00 sec)
-
-mysql> select *from mydata where id like 3;
-+----+----------+-------+
-| id | time     | work  |
-+----+----------+-------+
-|  3 | 03:00 AM | stand |
-+----+----------+-------+
-1 row in set (0.00 sec)
-
-mysql> select *from mydata where id like 30;
-Empty set (0.00 sec)
-
-mysql> select *from mydata where id like 3;
-+----+----------+-------+
-| id | time     | work  |
-+----+----------+-------+
-|  3 | 03:00 AM | stand |
-+----+----------+-------+
-1 row in set (0.00 sec)
-mysql> select *from mydata where id in (1,3);
-+----+----------+------------+
-| id | time     | work       |
-+----+----------+------------+
-|  1 | 01:00 AM | play music |
-|  3 | 03:00 AM | stand      |
-+----+----------+------------+
-2 rows in set (0.00 sec)
-
-```
-14. keys in SQl
-    
-![image](https://github.com/user-attachments/assets/2d189ebd-d597-4fad-8519-a8a9883b619e)
-
+---
